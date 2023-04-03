@@ -1,11 +1,20 @@
-# RadioSpoon Git REPO
+# RadioSpoon Radio Station.
+By Holland Sersen, Andrada Iorgulescu and Jordan Drummond
 
-# NOTES
-Mac uses Port Audio. Code might need to be edited depending on platform
+# HOW TO PLAY
+Mac uses PortAudio. Code might need to be edited depending on platform. 
+To play run this line of code 
 
-# DO NOT PLACE AUDIO FILES INTO REPO
-git does not like audio files. Have all the audio files in a different subdirectory
+**liquidsoap ./script.liq**
 
-../RadioSpoonSamples
+This will play the Radio staion in its entiretly 
 
-Make sure that youu have the Audio Folder
+# If you are not on Mac
+Please change port audio to which ever audio driver your platform supports. 
+
+## All Audio should be in ./Audio
+The script should play through A play list randomly. Then the next playlist randomly. And then then thenext.
+At the same time play a random jingle every 3 mintues. 
+
+## Naming
+I should have named everything lowercase. I realized this as soon as I finished. So just know that when editing. 

@@ -1,5 +1,5 @@
-say:Loaded Jordan's Playlist
-./Audio/Jordan/J1.wav
-./Audio/Jordan/J2.wav
-./Audio/Jordan/J3.wav
-./Audio/Jordan/J4.wav
+# say:Loaded Jordan's Playlist
+./J01.wav
+./J02.wav
+./J03.wav
+./J04.wav

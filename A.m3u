@@ -1,5 +1,5 @@
-say:Loaded Andrada's Playlist
-./Audio/Andrada/A1.wav
-./Audio/Andrada/A2.wav
-./Audio/Andrada/A3.wav
-./Audio/Andrada/A4.wav
+# say:Loaded Andrada's Playlist
+./A01.wav
+./A02.wav
+./A03.wav
+./A04.wav
