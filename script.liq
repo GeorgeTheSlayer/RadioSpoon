@@ -9,8 +9,6 @@ pSource = random([H, A, J])
 # Play the VO every three mintues over the other audio
 cRadio = add([V, pSource])
 
-#radio = switch([({3h-4h}, radio), ({8h-9h}, radio), ({13h-14h}, radio), ({18h-19h}, radio), ({23h-0h}, radio) ])
-
 # playlist organization
 earlymorning = playlist(mode = "normal", "./PL_GD01.m3u")
 morning = playlist (mode = "normal", "./PL_GD02.m3u")
@@ -18,25 +16,17 @@ noon = playlist (mode = "normal", "./PL_GD03.m3u")
 afternoon = playlist (mode = "normal", "./PL_GD04.m3u")
 evening = playlist (mode = "normal", "./PL_GD05.m3u")
 
-dRadio = switch([
+
+dRadio = normalize(switch([
 ({1h-2h}, earlymorning), 
 ({6h-7h}, morning),
 ({11h-12h}, noon), 
 ({16h-17h}, afternoon), 
 ({21h-22h}, evening)
-])
+]))
 
+dRadio = crossfade(fade_out = 5., fade_in = 5., duration = 6., dRadio) 
 
 radio = switch([({1h-2h}, dRadio), ({3h-4h}, cRadio), ({6h-7h}, dRadio), ({8h-9h}, cRadio), ({11h-12h}, dRadio), ({13h-14h}, cRadio), ({16h-17h}, dRadio), ({18h-19h}, cRadio), ({21h-22h}, dRadio), ({23h-0h}, cRadio) ])
-
-
-# crossfading 
-radio = crossfade(fade_out = 5., fade_in = 5., duration = 6., radio) 
-
-# erase volume difference 
-radio = nrj(normalize(radio))
-
-# convert mono to stereo
-radio = audio_to_stereo(radio) 
 
 output.portaudio(mksafe(radio))
